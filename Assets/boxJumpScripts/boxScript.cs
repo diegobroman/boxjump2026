@@ -7,11 +7,11 @@ public class boxScript : MonoBehaviour
     public float horizontalSpeedup;
     public float maxRunSpeed;
 
-    public float verticalSpeedup;
     public float maxFallSpeed;
     public float jumpHeight;
 
     private Vector2 moveInput;
+    private bool isGrounded = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +21,7 @@ public class boxScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //set the horizontal movement to zero when a player stops pressing a horizontal key
         //or when changing directions
         if (moveInput.x == 0 || (moveInput.x > 0 && rigidBody.linearVelocityX < 0) || (moveInput.x < 0 && rigidBody.linearVelocityX > 0))
@@ -28,7 +29,7 @@ public class boxScript : MonoBehaviour
             rigidBody.linearVelocity = new Vector2(0, rigidBody.linearVelocityY);
         }
 
-        rigidBody.linearVelocity += new Vector2(moveInput.x * horizontalSpeedup, moveInput.y * verticalSpeedup) * Time.deltaTime;
+        rigidBody.linearVelocity += new Vector2(moveInput.x * horizontalSpeedup, 0) * Time.deltaTime;
 
         //handle horizontal speed over the maxRunSpeed
         if (rigidBody.linearVelocityX > maxRunSpeed)
@@ -40,7 +41,11 @@ public class boxScript : MonoBehaviour
             rigidBody.linearVelocity = new Vector2(-1 * maxRunSpeed, rigidBody.linearVelocityY);
         }
 
-        
+        //handle downward vertical speed over the maxFallSpeed;
+        if (rigidBody.linearVelocityY < -1 * maxFallSpeed)
+        {
+            rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocityX, -1 * maxFallSpeed);
+        }
 
 
       
@@ -54,9 +59,14 @@ public class boxScript : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && isGrounded)
         {
             rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocityX, jumpHeight);
         }
+    }
+
+    public void setGrounded(bool grounded)
+    {
+        isGrounded = grounded;
     }
 }

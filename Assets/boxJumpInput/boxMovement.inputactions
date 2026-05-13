@@ -82,39 +82,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Down",
-                    "id": "5a07d447-e929-47f4-b115-fcd0d7608868",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Down",
-                    "id": "2ec4f745-4d82-40e8-8cc8-f1fb9eb4e7d8",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "eee574be-8b3c-4962-bb6e-ec581fef047b",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "0f301da0-c975-4d71-9be5-3ace0f7fcabc",
                     "path": "<Keyboard>/w",
@@ -129,6 +96,17 @@
                     "name": "",
                     "id": "c6b066fd-2d44-47ed-9ebf-b6e275963458",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7dc8563-2782-4604-bed9-d9386eee4d33",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
