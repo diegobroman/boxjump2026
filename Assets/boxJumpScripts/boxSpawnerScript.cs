@@ -15,7 +15,7 @@ public class PlayerSpawnerScript : MonoBehaviour
         
     }
 
-    public void spawnPlayer()
+    void spawnPlayer()
     {
         Instantiate(box, transform.position, transform.rotation);
     }
